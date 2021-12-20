@@ -24,7 +24,8 @@
           </ul>
         </div>
         <div class="modal-footer" style="justify-content: flex-start">
-            <form action="/trips/{{$trip->id}}/book" method="/post" style="display: block">
+            <form action="/trips/{{$trip->id}}/book" method="POST" style="display: block">
+              @csrf
                 <div class="input-group">
                     <input type="number" class="form-control mx-2" name="seats" value="1" max="{{$trip->available_seats}}">
                     <button type="submit" class="btn btn-success mx-2">Book</button>
