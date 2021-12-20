@@ -19,8 +19,8 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+    return redirect('/trips');
+})->middleware(['auth']);
 
 Route::get('/trips', [BookingController::class, 'trips'])->middleware('auth');
 
