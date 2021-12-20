@@ -6,6 +6,7 @@
         <div>
             <h2>By Amr Monier 😎.</h2>
         </div>
-        <a href="http://github.com/AmrMonier/egyptus">The github repository</a>
+        <a href="http://github.com/AmrMonier/egyptus" class="btn btn-outline-secondary my-2">The github repository</a>
+        <a href="/trips" class="btn btn-outline-primary">Explore trips</a>
     </div>
 @endsection
