@@ -24,4 +24,6 @@ Route::get('/dashboard', function () {
 
 Route::get('/trips', [BookingController::class, 'trips']);
 
+Route::post('/trips/{trip}/book', [BookingController::class, 'bookTrip']);
+
 require __DIR__.'/auth.php';

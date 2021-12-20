@@ -17,7 +17,7 @@ class CreateOrdersTable extends Migration
             $table->id();
             $table->foreignId('client_id')->references('id')->on('users');
             $table->foreignId('trip_id')->references('id')->on('users');
-            $table->integer('seates',false, true);
+            $table->integer('seats',false, true);
             $table->float('price');
             $table->timestamps();
         });

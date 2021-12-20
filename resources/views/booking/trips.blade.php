@@ -2,6 +2,7 @@
 
 @section('content')
     <div class="container">
+        @include('partials.flash-msgs')
         <ul class="list-group">
             @foreach ($trips as $trip)
                 <li class="list-group-item my-2" style="position: relative">
