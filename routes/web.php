@@ -22,8 +22,8 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::get('/trips', [BookingController::class, 'trips']);
+Route::get('/trips', [BookingController::class, 'trips'])->middleware('auth');
 
-Route::post('/trips/{trip}/book', [BookingController::class, 'bookTrip']);
+Route::post('/trips/{trip}/book', [BookingController::class, 'bookTrip'])->middleware('auth');
 
 require __DIR__.'/auth.php';
