@@ -13,4 +13,9 @@ class Trip extends Model
         'start_date',
         'end_date'
     ];
+
+    public function provider()
+    {
+        return $this->belongsTo(User::class, 'provider_id', 'id');
+    }
 }
