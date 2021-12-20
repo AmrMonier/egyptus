@@ -10,8 +10,8 @@ use App\Models\Trip;
 class BookingController extends Controller
 {
     public function trips()
-    {
-        return view('booking.trips', ['trips' =>  Trip::paginate(10)]);
+    {        
+        return view('booking.trips', ['trips' =>  Trip::where('available_seats', '<>', 0)->orderBy('available_seats', 'asc')->paginate(10)]);
     }
     public function bookTrip(Trip $trip)
     {
@@ -21,9 +21,9 @@ class BookingController extends Controller
             'seats' => request()->seats,
             'price' => request()->seats * $trip->price,
         ]);
-        
+
         $trip->update(['available_seats' => $trip->available_seats - request()->seats]);
         session()->flash('booked', 'Trip Booked successfully !');
-        return redirect('/trips'); 
+        return redirect('/trips');
     }
 }
